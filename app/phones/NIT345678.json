@@ -1,0 +1,20 @@
+[
+    {
+               "tipoDocumento" : "NIT",
+               "numeroDocumento" : "345678",
+               "primerNombre" : "Empresa",
+               "segundoNombre" : "Pequeña",
+                "primerApellido" : "Asociada",
+                "segundoApellido" : "Limitada",
+                "tipoCliente" : "Asegurado",
+                "fechaNacimiento" : 1352745000000,
+                "vehiculo" : {
+                                        "tipoVehiculo" : "moto",
+                                        "referencia" : "HER564",
+                                        "numeroPoliza" : "234235",
+                                       "fechaInicioVigencia" : 1352745000000,
+                                        "fechaFinVigencia" : 1352745000000
+                                   }
+               }
+    
+]

@@ -1,0 +1,20 @@
+[
+    {
+               "tipoDocumento" : "CC",
+               "numeroDocumento" : "12345",
+               "primerNombre" : "Pepito",
+               "segundoNombre" : "P.",
+                "primerApellido" : "Perez",
+                "segundoApellido" : "Zuleta",
+                "tipoCliente" : "Afiliado",
+                "fechaNacimiento" : 1352745000000,
+                "vehiculo" : {
+                                        "tipoVehiculo" : "Campero",
+                                        "referencia" : "HER564",
+                                        "numeroPoliza" : "234235",
+                                       "fechaInicioVigencia" : 1352745000000,
+                                        "fechaFinVigencia" : 1352745000000
+                                   }
+               }
+    
+]
