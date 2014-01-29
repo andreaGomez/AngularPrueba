@@ -1,0 +1,19 @@
+{
+  "name": "ReclamamosSA",
+  "version": "0.0.0",
+  "description": "Proyecto Reclamamos SA para el curso de desarrollo de aplicaciones empresariales",
+  "main": "web-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andreaGomez/pruebaandreaheroku"
+  },
+  "author": "Desarrollo de aplicaciones empresariales UdeA",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/andreaGomez/pruebaandreaheroku/issues"
+  },
+  "homepage": "https://github.com/andreaGomez/pruebaandreaheroku"
+}

@@ -1,0 +1,52 @@
+#!/usr/bin/env node
+
+var express = require('express'), 
+    util = require('util'),
+    http = require('http'),
+    fs = require('fs'),
+    url = require('url'),
+    events = require('events');
+var app = express();
+
+var DEFAULT_PORT = process.env.PORT || 8000;
+
+
+//Configuración de la aplicación
+app.configure(function(){
+//parsear el cuerpo del request para uso del POST.
+  app.use(express.bodyParser());  
+//middleware que hace posible el soporte de requests tipo PUT o DELETE 
+  app.use(express.methodOverride());  
+  app.use(app.router);  
+});  
+  
+app.configure('development', function(){  
+  app.use(express.errorHandler());  
+});  
+
+
+
+
+var fs = require('fs');
+
+var buf = new Buffer(fs.readFileSync('app/index.html','utf8'));
+  response.send(buf.toString());
+});
+
+function main(argv) {
+  new HttpServer({
+    'GET': createServlet(StaticServlet),
+    'HEAD': createServlet(StaticServlet)
+  }).start(Number(argv[2]) || DEFAULT_PORT);
+  app.get('/', function(request, response) {
+
+}
+
+function createServlet(Class) {
+  var servlet = new Class();
+  return servlet.handleRequest.bind(servlet);
+}
+
+
+// Must be last,
+main(process.argv);
