@@ -1,46 +1,18 @@
-//Codigo para servir archivos estaticos con node.js 
-var http = require('http');
-var fs = require('fs');
-var path = require('path');
-// Servidor http escuchara en un puerto apropiado, o el puerto 8000 por defecto
-var port = process.env.PORT || 800; 
-http.createServer(function (request, response) {
-    console.log('request starting...');
-  
-  var filePath = '.' + request.url;
-  if (filePath == './')
-    filePath = './app/index.html#/phones';
-    
-  var extname = path.extname(filePath);
-  var contentType = 'text/html';
-  switch (extname) {
-    case '.js':
-      contentType = 'text/javascript';
-      break;
-    case '.css':
-      contentType = 'text/css';
-      break;
-  }
-  
-  path.exists(filePath, function(exists) {
-  
-    if (exists) {
-      fs.readFile(filePath, function(error, content) {
-        if (error) {
-          response.writeHead(500);
-          response.end();
-        }
-        else {
-          response.writeHead(200, { 'Content-Type': contentType });
-          response.end(content, 'utf-8');
-        }
-      });
-    }
-    else {
-      response.writeHead(404);
-      response.end();
-    }
+var express  = require('express');
+  var app      = express();                 // create our app w/ express
+
+var port = process.env.PORT || 8000; 
+
+
+  // configuration =================
+
+  app.configure(function() {
+    app.use(express.static(__dirname + '/app'));     // set the static files location /public/img will be /img for users
+    app.use(express.logger('dev'));             // log every request to the console
+    app.use(express.bodyParser());              // pull information from html in POST
+    app.use(express.methodOverride());            // simulate DELETE and PUT
   });
-  
-}).listen(port);
-console.log('Server running at');
+
+  // listen (start app with node server.js) ======================================
+  app.listen(port);
+  console.log("App listening on port" + port);
