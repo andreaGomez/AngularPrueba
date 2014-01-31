@@ -27,79 +27,79 @@
           </table>
           </center>
               <center>    
-              <table border="0" style="width: 100%;" cellpadding="0" cellspacing="0" ng-repeat="phone in phones" class="thumbnail phone-listing">
+              <table border="0" style="width: 100%;" cellpadding="0" cellspacing="0" ng-repeat="poliza in polizas" class="thumbnail phone-listing">
                 <tbody> 
                   <tr>
                     <td>Primer nombre </td>
-                    <td ><input id="primerNombre" type="text" name="primerNombre" class="upper" ng-model="phone.primerNombre" disabled></td>
+                    <td ><input id="primerNombre" type="text" name="primerNombre" class="upper" ng-model="poliza.primerNombre" disabled></td>
                     <td width="10%">&nbsp;</td>
                     <td>Segundo nombre</td>
-                    <td><input id="segundoNombre" type="text" name="segundoNombre" class="upper" ng-model="phone.segundoNombre" disabled></td>
+                    <td><input id="segundoNombre" type="text" name="segundoNombre" class="upper" ng-model="poliza.segundoNombre" disabled></td>
                   </tr>
                   <tr>
                     <td>Primer apellido</td>
-                    <td><input id="primerApellido" type="text" name="primerApellido" class="upper" ng-model="phone.primerApellido" disabled ></td>
+                    <td><input id="primerApellido" type="text" name="primerApellido" class="upper" ng-model="poliza.primerApellido" disabled ></td>
                     <td>&nbsp;</td>
                     <td>Segundo apellido</td>
-                    <td><input id="segundoApellido" type="text" name="segundoApellido" class="upper" ng-model="phone.segundoApellido" disabled></td>
+                    <td><input id="segundoApellido" type="text" name="segundoApellido" class="upper" ng-model="poliza.segundoApellido" disabled></td>
                   </tr>
                   <tr>
                     <td>Tipo </td>
-                    <td><input id="tipoCliente" type="text" name="tipoCliente"  class="upper" ng-model="phone.tipoCliente" disabled ></td>
+                    <td><input id="tipoCliente" type="text" name="tipoCliente"  class="upper" ng-model="poliza.tipoCliente" disabled ></td>
                     <td>&nbsp;</td>
                     <td>Fecha de nacimiento</td>
-                    <td><input id="fechaNacimiento" type="text" name="fechaNacimiento" class="upper" ng-model="phone.fechaNacimiento" disabled > </td>
+                    <td><input id="fechaNacimiento" type="text" name="fechaNacimiento" class="upper" ng-model="poliza.fechaNacimiento" disabled > </td>
                   </tr>
                   <tr><td colspan="5"><HR></td></tr>
                   <tr>
                     <td>Tipo de vehículo </td>
-                    <td><input id="tipoVehiculo" type="text" name="tipoVehiculo" class="upper" ng-model="phone.vehiculo.tipoVehiculo" disabled  ></td>
+                    <td><input id="tipoVehiculo" type="text" name="tipoVehiculo" class="upper" ng-model="poliza.vehiculo.tipoVehiculo" disabled  ></td>
                     <td>&nbsp;</td>
                     <td>Referencia</td>
-                    <td><input id="referencia" type="text" name="referencia"  class="upper" ng-model="phone.vehiculo.referencia" disabled  ></td>
+                    <td><input id="referencia" type="text" name="referencia"  class="upper" ng-model="poliza.vehiculo.referencia" disabled  ></td>
                   </tr>
                   <tr>
                     <td>Número de póliza </td>
-                    <td><input id="numeroPoliza" type="text" name="numeroPoliza"  class="upper" ng-model="phone.vehiculo.numeroPoliza" disabled ></td>
+                    <td><input id="numeroPoliza" type="text" name="numeroPoliza"  class="upper" ng-model="poliza.vehiculo.numeroPoliza" disabled ></td>
                     <td>&nbsp;</td>
                     <td>Fecha inicio de vigencia</td>
-                    <td><input id="fechaInicioVigencia" type="text" name="fechaInicioVigencia"   class="upper" ng-model="phone.vehiculo.fechaInicioVigencia" disabled ></td>
+                    <td><input id="fechaInicioVigencia" type="text" name="fechaInicioVigencia"   class="upper" ng-model="poliza.vehiculo.fechaInicioVigencia" disabled ></td>
                   </tr>
                   <tr>
                     <td>Fecha fin de vigencia </td>
-                    <td><input id="fechaFinVigencia" type="text" name="fechaFinVigencia"  class="upper" ng-model="phone.vehiculo.fechaFinVigencia" disabled ></td>
+                    <td><input id="fechaFinVigencia" type="text" name="fechaFinVigencia"  class="upper" ng-model="poliza.vehiculo.fechaFinVigencia" disabled ></td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                   </tr>       
                 <tr><td colspan="5"><HR></td></tr>
                 <form name="ingreso">
                   <tr>
-                    <td>Fecha del incidente</td>
+                    <td>Fecha del incidente (*)</td>
                     <td><input type="date" id="fechaIncidente"  name="fechaIncidente"  class="upper" required></td>
                     <td width="10%"></td>
-                    <td>Motivo incidente</td>
+                    <td>Motivo incidente (*)</td>
                      <td>
                      <select id="listaMotivos" ng-model="motivo" ng-options="m.name for m in motivos" required></select><br>
                     </td>
                   </tr>
                   <tr>
-                    <td>Valor de reparación aproximado</td>
+                    <td>Valor de reparación aproximado (*)</td>
                     <td><input  type="number" id="valor" name="valor"  class="upper" required></td>                 
                     <td>&nbsp;</td>
-                    <td>Descripción</td>
+                    <td>Descripción (*)</td>
                     <td><textarea <input id="descripcionIncidente"  name="descripcionIncidente"  class="upper" rows="4" cols="30" required></textarea></td>
                   </tr>
                   <tr>
-                    <td>Lugar del incidente</td>
+                    <td>Lugar del incidente (*)</td>
                     <td><input id="lugarIncidente" type="text" name="lugarIncidente"  class="upper" required></td>
                     <td>&nbsp;</td>
-                    <td>Culpable </td>
+                    <td>Culpable (*)</td>
                     <td>Si <input type="radio" name="culpable" value="si"> No <input type="radio" name="culpable" value="no"> </td>
                   </tr>
                   <tr>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
-                    <td>&nbsp; <button type="submit"> Enviar</button></td>
+                    <td>&nbsp; <button type="submit" ng-click="guardarIncidente()"> Enviar</button></td> 
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                   </tr>

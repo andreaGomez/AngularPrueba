@@ -2,17 +2,17 @@
 
 /* App Module */
 
-var phonecatApp = angular.module('phonecatApp', [
+var reclamamosApp = angular.module('reclamamosApp', [
   'ngRoute',
-  'phonecatControllers'
+  'formReclamacionControllers'
 ]);
 
-phonecatApp.config(['$routeProvider',
+reclamamosApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/index', {
         templateUrl: 'vistas/formularioReclamacion.html',
-        controller: 'PhoneListCtrl'
+        controller: 'FormularioReclamacionCtrl'
       }).
       otherwise({
         redirectTo: '/index'

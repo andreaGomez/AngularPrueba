@@ -1,21 +1,25 @@
 'use strict';
 /* Controllers */
 
-var phonecatControllers = angular.module('phonecatControllers', []);
-phonecatControllers.controller('PhoneListCtrl', ['$scope', '$http', function ($scope, $http) {
+var formReclamacionControllers = angular.module('formReclamacionControllers', []);
+formReclamacionControllers.controller('FormularioReclamacionCtrl', ['$scope', '$http', function ($scope, $http) {
    $scope.informacionCliente = function(){
 		var tipoDoc = document.getElementById("tipoDocumentoCliente");	
 		var seleccionado = tipoDoc.options[tipoDoc.selectedIndex].text; 
         var numeroDoc = document.getElementById("numeroDocumento").value;
 		
 		$http.get('archivosJson/' + seleccionado + numeroDoc + '.json').success(function(data) {
-			$scope.phones = data;
+			$scope.polizas = data;
 		}).error(function(data) {
 			alert("Usuario no afiliado a Reclamamos S.A");
-			$scope.phones = null;
+			$scope.polizas = null;
 		});		
     }
-	    	
+	 
+	$scope.guardarIncidente = function(){
+		//Falta guardar datos
+		}
+	
 	$http.get('archivosJson/tiposDocumento.json').success(function(data) {
 	    $scope.documentos = data;
     });
