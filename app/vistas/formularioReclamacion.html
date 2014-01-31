@@ -18,7 +18,7 @@
             <tbody>
               <tr>
                 <td>Tipo de documento (*)&nbsp;</td>
-                <td><select id="tipoDocumentoCliente" ng-model="documento" ng-options="c.tipoDocumento for c in documentos" required></select><br></td> 
+                <td><select id="tipoDocumentoCliente" ng-model="documento" ng-options="c.name for c in documentos" required></select><br></td> 
                 <td>&nbsp;</td>      
                 <td>Número de documento (*)&nbsp;</td>
                 <td><input id="numeroDocumento" type="text" name="numeroDocumento" class="upper" maxlength="16" required>&nbsp; <button type="submit" ng-click="informacionCliente()">Buscar</button> </td>
@@ -79,7 +79,7 @@
                     <td width="10%"></td>
                     <td>Motivo incidente</td>
                      <td>
-                     <select id="listaMotivos" ng-model="motivo" ng-options="m.motivo for m in motivos" required></select><br>
+                     <select id="listaMotivos" ng-model="motivo" ng-options="m.name for m in motivos" required></select><br>
                     </td>
                   </tr>
                   <tr>

@@ -10,11 +10,11 @@ var phonecatApp = angular.module('phonecatApp', [
 phonecatApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/phones', {
-        templateUrl: 'partials/phone-list.html',
+      when('/index', {
+        templateUrl: 'vistas/formularioReclamacion.html',
         controller: 'PhoneListCtrl'
       }).
       otherwise({
-        redirectTo: '/phones'
+        redirectTo: '/index'
       });
   }]);

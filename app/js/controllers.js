@@ -8,7 +8,7 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', '$http', function ($s
 		var seleccionado = tipoDoc.options[tipoDoc.selectedIndex].text; 
         var numeroDoc = document.getElementById("numeroDocumento").value;
 		
-		$http.get('phones/' + seleccionado + numeroDoc + '.json').success(function(data) {
+		$http.get('archivosJson/' + seleccionado + numeroDoc + '.json').success(function(data) {
 			$scope.phones = data;
 		}).error(function(data) {
 			alert("Usuario no afiliado a Reclamamos S.A");
@@ -16,11 +16,11 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', '$http', function ($s
 		});		
     }
 	    	
-	$http.get('phones/tiposDocumento.json').success(function(data) {
+	$http.get('archivosJson/tiposDocumento.json').success(function(data) {
 	    $scope.documentos = data;
     });
 	
-	$http.get('phones/motivosIncidente.json').success(function(data) {
+	$http.get('archivosJson/motivosIncidente.json').success(function(data) {
       $scope.motivos = data;
     });
 	
