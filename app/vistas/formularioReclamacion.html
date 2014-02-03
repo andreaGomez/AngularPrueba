@@ -1,17 +1,13 @@
 <style type="text/css">
 <!--
-body {
-  margin-left: 0px;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
+body{
+     background:url(../img/fondo.gif) repeat top;
 }
-
 table
 {
-border:1px solid #2F7F12;
-border-radius: 5px;
-width:200px;
+border:0px solid;
+border-radius: 30px;
+background-color: #ffffff;
 }
 td
 {
@@ -20,10 +16,14 @@ padding-bottom:5px;
 padding-right:3px;
 padding-left:3px;
 }
-.Estilo1 {font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 13px; color: #94D67C; background: #F2FFEE}
+.Estilo1 {font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 13px; color: #8FC7A8; background: #F2FFEE}
 -->
 </style>
-
+<html>
+<head>
+  <title></title>
+</head>
+<body bgcolor="#FCDBA1">
 <div class="row-fluid">
     <div class="span2">
       <!--Sidebar content-->      
@@ -31,209 +31,137 @@ padding-left:3px;
     <div class="span10">
       <!--Body content-->
        <form name="Form">
-       <table style="width: 860px" >
+  <table border="0" style="width: 900px" >
+    <tr>    
+      <td>
+       <table border="0" style="width: 900px" >
         <tr>                   
-          <td colspan="4" align="center"><img src="img/BANNER1.jpg"></td>
+          <td colspan="5" align="center">&nbsp;</td>
+        </tr>
+        <tr>                   
+          <td colspan="5" align="center"><img width="900px" height="369px" src="img/BANNER1.png"></td>
         </tr>
         <tr>
-          <td>
-            <table>
-              <tr>
-                <td  class="Estilo1">Tipo de documento (*)&nbsp;</td>
-              </tr>
-            </table>
-          </td>
-          <td><select id="tipoDocumentoCliente" ng-model="documento" ng-options="c.name for c in documentos" required></select></td>
-          <td>&nbsp;</td>  
+          <td>&nbsp;</td> 
+          <td class="Estilo1">Tipo de documento (*)&nbsp;</td>
+          <td class="Estilo1"><select id="tipoDocumentoCliente" ng-model="documento" ng-options="c.name for c in documentos" required></select></td>
+          <td class="Estilo1">&nbsp;</td>  
           <td>&nbsp;</td>             
         </tr>
         <tr>
-          <td>
-            <table>
-              <tr>
-                <td  class="Estilo1">N&uacute;mero de documento (*)&nbsp;</td>
-              </tr>
-            </table>
-          </td>
-          <td><input id="numeroDocumento" type="text" name="numeroDocumento" maxlength="16" required>&nbsp;  </td>
           <td>&nbsp;</td> 
-          <td align="center"><button  type="submit" ng-click="informacionCliente()">Buscar</button></td>
+          <td class="Estilo1">N&uacute;mero de documento (*)&nbsp;</td>
+          <td class="Estilo1"><input id="numeroDocumento" type="text" name="numeroDocumento" maxlength="16" required>&nbsp;  </td>          
+          <td class="Estilo1" align="center"><button  type="submit" ng-click="informacionCliente()">Buscar</button></td>
+          <td>&nbsp;</td> 
         </tr>
       </table>
       </form>
 
-        <table  ng-repeat="poliza in polizas" style="width: 860px">
+        <table  ng-repeat="poliza in polizas" style="width: 900px">
+        <tr>
+          <td colspan="6"><HR></td>
+        </tr>
           <tr>
-            <td>
-            <table>
-              <tr>
-                <td class="Estilo1">Primer nombre </td>
-              </tr>
-            </table>
-          </td>            
-            <td ><input id="primerNombre" type="text" name="primerNombre" ng-model="poliza.primerNombre" disabled></td>
-            <td>
-            <table>
-              <tr>
-                <td class="Estilo1">Segundo nombre</td>
-              </tr>
-            </table>
-          </td>
-          <td><input id="segundoNombre" type="text" name="segundoNombre" ng-model="poliza.segundoNombre" disabled></td>
-          </tr>
-          <tr>
-            <td>
-            <table>
-              <tr>
-                <td class="Estilo1">Primer apellido</td>
-              </tr>
-            </table>
-          </td>  
-          <td><input id="primerApellido" type="text" name="primerApellido" ng-model="poliza.primerApellido" disabled ></td>
-          <td>
-            <table>
-              <tr>
-                <td class="Estilo1">Segundo apellido</td>
-              </tr>
-            </table>
-          </td>  
-          <td><input id="segundoApellido" type="text" name="segundoApellido" ng-model="poliza.segundoApellido" disabled></td>
-          </tr>
-          <tr>
-            <td>
-            <table>
-              <tr>
-                <td class="Estilo1">Tipo </td>
-              </tr>
-            </table>
-            </td>
-            <td><input id="tipoCliente" type="text" name="tipoCliente"  ng-model="poliza.tipoCliente" disabled ></td>
-              <td>
-              <table>
-                <tr>
-                  <td class="Estilo1">Fecha de nacimiento</td>
-                </tr>
-              </table>
-            </td>
-            <td><input id="fechaNacimiento" type="text" name="fechaNacimiento" ng-model="poliza.fechaNacimiento" disabled > </td>
-          </tr>
-          <tr>
-            <td colspan="4"><HR></td>
-          </tr>
-          <tr>
-            <td>
-            <table>
-              <tr>
-                <td class="Estilo1">Tipo de vehículo </td>
-              </tr>
-            </table>
-            </td> 
-            <td><input id="tipoVehiculo" type="text" name="tipoVehiculo"  ng-model="poliza.vehiculo.tipoVehiculo" disabled  ></td>
-            <td>
-            <table>
-              <tr>
-                <td class="Estilo1">Referencia</td>
-              </tr>
-            </table>
-            </td>            
-            <td><input id="referencia" type="text" name="referencia"  ng-model="poliza.vehiculo.referencia" disabled  ></td>
-          </tr>
-          <tr>
-            <td>
-            <table>
-              <tr>
-                <td class="Estilo1">N&uacute;mero de póliza </td>
-              </tr>
-            </table>
-            </td>             
-            <td><input id="numeroPoliza" type="text" name="numeroPoliza"  ng-model="poliza.vehiculo.numeroPoliza" disabled ></td>
-            <td>
-            <table>
-              <tr>
-                <td class="Estilo1"> Fecha inicio de vigencia</td>
-              </tr>
-            </table>
-            </td>             
-            <td><input id="fechaInicioVigencia" type="text" name="fechaInicioVigencia"    ng-model="poliza.vehiculo.fechaInicioVigencia" disabled ></td>
-          </tr>
-          <tr>
-            <td>
-            <table>
-              <tr>
-                <td class="Estilo1">Fecha fin de vigencia </td>
-              </tr>
-            </table>
-            </td>            
-            <td><input id="fechaFinVigencia" type="text" name="fechaFinVigencia"  ng-model="poliza.vehiculo.fechaFinVigencia" disabled ></td>
+            <td>&nbsp;</td> 
+            <td class="Estilo1">Primer nombre </td>
+            <td class="Estilo1"><input id="primerNombre" type="text" name="primerNombre" ng-model="poliza.primerNombre" disabled></td>
+            <td class="Estilo1">Segundo nombre</td>
+            <td class="Estilo1"><input id="segundoNombre" type="text" name="segundoNombre" ng-model="poliza.segundoNombre" disabled></td>
             <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td> 
+            <td class="Estilo1">Primer apellido</td>
+            <td class="Estilo1"><input id="primerApellido" type="text" name="primerApellido" ng-model="poliza.primerApellido" disabled ></td>
+            <td class="Estilo1">Segundo apellido</td>
+            <td class="Estilo1"><input id="segundoApellido" type="text" name="segundoApellido" ng-model="poliza.segundoApellido" disabled></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td> 
+            <td class="Estilo1">Tipo </td>
+            <td class="Estilo1"><input id="tipoCliente" type="text" name="tipoCliente"  ng-model="poliza.tipoCliente" disabled ></td>
+            <td class="Estilo1">Fecha de nacimiento</td>
+            <td class="Estilo1"><input id="fechaNacimiento" type="text" name="fechaNacimiento" ng-model="poliza.fechaNacimiento" disabled > </td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="6"><HR></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td> 
+            <td class="Estilo1">Tipo de vehículo </td>
+            <td class="Estilo1"><input id="tipoVehiculo" type="text" name="tipoVehiculo"  ng-model="poliza.vehiculo.tipoVehiculo" disabled  ></td>
+            <td class="Estilo1">Referencia</td>
+            <td class="Estilo1"><input id="referencia" type="text" name="referencia"  ng-model="poliza.vehiculo.referencia" disabled  ></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td> 
+            <td class="Estilo1">N&uacute;mero de póliza </td>
+            <td class="Estilo1"><input id="numeroPoliza" type="text" name="numeroPoliza"  ng-model="poliza.vehiculo.numeroPoliza" disabled ></td>
+            <td class="Estilo1"> Fecha inicio de vigencia</td>
+            <td class="Estilo1"><input id="fechaInicioVigencia" type="text" name="fechaInicioVigencia"    ng-model="poliza.vehiculo.fechaInicioVigencia" disabled ></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td> 
+            <td class="Estilo1">Fecha fin de vigencia </td>
+            <td class="Estilo1"><input id="fechaFinVigencia" type="text" name="fechaFinVigencia"  ng-model="poliza.vehiculo.fechaFinVigencia" disabled ></td>
+            <td class="Estilo1">&nbsp;</td>
+            <td class="Estilo1">&nbsp;</td>
             <td>&nbsp;</td>
           </tr>
         </table>
-<br>
+
         <form name="ingreso">
-        <table ng-repeat="poliza in polizas" style="width: 860px">
-            <tr>
-              <td>
-              <table>
-                <tr>
-                  <td class="Estilo1" >Fecha del incidente (*)</td>
-                </tr>
-              </table>
-              </td>             
-              <td><input type="date" id="fechaIncidente"  name="fechaIncidente" required></td>
-              <td>
-              <table>
-                <tr>
-                   <td class="Estilo1">Motivo incidente (*)</td>
-                </tr>
-              </table>
-              </td>           
-              <td><select id="listaMotivos" ng-model="motivo" ng-options="m.name for m in motivos" required></select></td>
-            </tr>
-            <tr>
-              <td>
-              <table>
-                <tr>
-                  <td class="Estilo1">Valor reparación aprox (*)</td>
-                </tr>
-              </table>
-              </td>            
-              <td><input  type="number" id="valor" name="valor" required></td>
-              <td>
-              <table>
-                <tr>
-                  <td class="Estilo1">Descripción (*)</td>
-                </tr>
-              </table>
-              </td>            
-              <td><textarea <input id="descripcionIncidente"  name="descripcionIncidente" rows="4" cols="30" required></textarea></td>
-            </tr>
-            <tr>
-              <td>
-              <table>
-                <tr>
-                  <td class="Estilo1">Lugar del incidente (*)</td>
-                </tr>
-              </table>
-              </td>             
-              <td><input id="lugarIncidente" type="text" name="lugarIncidente"  required></td>
-              <td>
-              <table>
-                <tr>
-                   <td class="Estilo1">Culpable (*)</td>
-                </tr>
-              </table>
-              </td>            
-              <td>Si <input type="radio" name="culpable" value="si" required> No <input type="radio" name="culpable" value="no"> </td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp; <button type="submit" ng-click="guardarIncidente()"> Enviar</button></td>
-            </tr>  
+        <table ng-repeat="poliza in polizas" style="width: 900px">  
+          <tr>
+            <td colspan="6"><HR></td>
+          </tr>        
+          <tr>
+            <td>&nbsp;</td> 
+            <td class="Estilo1" >Fecha del incidente (*)</td>
+            <td class="Estilo1"><input type="date" id="fechaIncidente"  name="fechaIncidente" required></td>
+            <td class="Estilo1">Motivo incidente (*)</td>
+            <td class="Estilo1"><select id="listaMotivos" ng-model="motivo" ng-options="m.name for m in motivos" required></select></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td> 
+            <td class="Estilo1">Valor reparación aprox (*)</td>
+            <td class="Estilo1"><input  type="number" id="valor" name="valor" required></td>
+            <td class="Estilo1">Descripción (*)</td>
+            <td class="Estilo1"><textarea <input id="descripcionIncidente"  name="descripcionIncidente" rows="4" cols="30" required></textarea></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td> 
+            <td class="Estilo1">Lugar del incidente (*)</td>
+            <td class="Estilo1"><input id="lugarIncidente" type="text" name="lugarIncidente"  required></td>
+            <td class="Estilo1">Culpable (*)</td>
+            <td class="Estilo1">Si <input type="radio" name="culpable" value="si" required> No <input type="radio" name="culpable" value="no"> </td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td> 
+            <td class="Estilo1">&nbsp;</td>
+            <td class="Estilo1">&nbsp;</td>
+            <td class="Estilo1">&nbsp;</td>
+            <td class="Estilo1">&nbsp; <button type="submit" ng-click="guardarIncidente()"> Enviar</button></td>
+            <td>&nbsp;</td>
+          </tr> 
+          <tr>                   
+            <td colspan="6" align="center">&nbsp;</td>
+          </tr> 
         </table>
-        </form> 
+      </td>
+    </tr> 
+  </table>
+</form> 
   </div>
 </div>
+</body>
+</html>
 
