@@ -20,9 +20,11 @@ formReclamacionControllers.controller('FormularioReclamacionCtrl', ['$scope', '$
 		//Falta guardar datos
 		}
 	
-	$http.get('archivosJson/tiposDocumento.json').success(function(data) {
-	    $scope.documentos = data;
+		$http.get('archivosJson/servicio.json').success(function(data) {
+	    $scope.documentos = data.tipoDocs;
     });
+	
+
 	
 	$http.get('archivosJson/motivosIncidente.json').success(function(data) {
       $scope.motivos = data;
