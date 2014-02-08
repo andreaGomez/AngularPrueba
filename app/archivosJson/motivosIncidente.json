@@ -1,6 +1,2 @@
-[
-	{"id" : 1, "name" : "Choque"},
-	{"id" : 2, "name" : "distraccion"},
-	{"id" : 3, "name" : "borracho"},
-	{"id" : 4, "name" : "via Mal Estado"}
-]
+{"motivoDto":[{"id":"Choque"},{"id":"Distraccion"},{"id":"Borracho"},{"id":"Via en mal Estado"}]}
+

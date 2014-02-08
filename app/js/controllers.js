@@ -21,13 +21,13 @@ formReclamacionControllers.controller('FormularioReclamacionCtrl', ['$scope', '$
 		}
 	
 		$http.get('archivosJson/servicio.json').success(function(data) {
-	    $scope.documentos = data.tipoDocs;
+	    $scope.documentos = data.tipoDocumentoDto;
     });
 	
 
 	
 	$http.get('archivosJson/motivosIncidente.json').success(function(data) {
-      $scope.motivos = data;
+      $scope.motivos = data.motivoDto;
     });
 	
   }]);
